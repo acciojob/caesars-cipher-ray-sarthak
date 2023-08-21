@@ -27,6 +27,7 @@ const lookup = {
   X: "K",
   Y: "L",
   Z: "M",
+ 
   "?": "?",
   ",": ",",
 };
@@ -39,18 +40,23 @@ function rot13(encodedStr) {
 		let x=encodedStr[i];
 		
 		for(let j in lookup){
-			if(j===x){
+			
+			if(x===j){
 				decodedArr.push(lookup[j]);
 				break;
 			}
 		}
+		if(x===" "){
+			decodedArr.push(" ");
+		}
+		
 	}
+	let stringg=decodedArr.join('');
 
-  return decodedArr; //return decodedArr
+  return stringg; //return decodedArr
 }
 
 //You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
-console.log(4)
 console.log(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT"));
 
 // Do not change this line
